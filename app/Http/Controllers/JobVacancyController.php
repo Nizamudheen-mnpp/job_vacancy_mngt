@@ -39,7 +39,7 @@ class JobVacancyController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
             'job_id' => 'required|exists:jobs,id',
-            'status' => 'required|in:Active,Inactive', // Adjust values as per your requirement
+            'status' => 'required|in:Active,Inactive',
             'description' => 'nullable|string',
             'vacancy_id' => 'nullable|exists:vacancies,id',
         ]);

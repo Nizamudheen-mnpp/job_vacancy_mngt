@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2>Job Vacancies</h2>
-                    <div class="col-md-12 text-right"> <!-- Adjust the column size as needed -->
+                    <div class="col-md-12 text-right">
                         <button class="btn btn-primary" v-on:click="popupModal(0)">Add New Job</button>
                     </div>
                     <table class="table">
@@ -322,10 +322,8 @@
                         confirmButtonText: 'Yes, delete it!'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            // If confirmed, send delete request
                             let url = "api/job-vacancy/delete/"+vacancyId;
                             axios.delete(url).then(function(response) {
-                                // Handle success response
                                 Swal.fire(
                                     'Deleted!',
                                     'Vacancy has been deleted.',
@@ -333,7 +331,6 @@
                                 );
                                 app.getJobVacancyList(app.pagination.current_page);
                             }).catch(function(error) {
-                                // Handle error response
                                 Swal.fire(
                                     'Error!',
                                     'Failed to delete vacancy.',
