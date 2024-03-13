@@ -1,0 +1,19 @@
+Create Temporary job vacancy management system using laravel, vue and MySql Steps 
+1.Add users data into the database using factory or seeder. 
+The table name should be users and the fields are name, email, password, status 
+
+2.Add sample jobs data into the database using factory or seeder. 
+The table name should be jobs and the fields are job_name, status 
+
+3.create Job vacancy page, add jobs, edit jobs, delete jobs temporarily and send job notifications via mail to all active users. 
+The table name should be vacancies and the fields are job_id, status, start_date, end_date, description 
+
+4.create a weekly calendar page to schedule jobs to active users 
+The table name should be scheduled_vacancies and the fields are vacancy_id, user_id, status 
+
+5.add cancel and edit option for scheduled jobs 
+
+6.Temporarily delete past scheduled vacancies automatically
+
+
+

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobVacancyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('job-vacancy');
 });
+Route::get('job-vacancy',[JobVacancyController::class,'index'])->name('job-vacancy');
