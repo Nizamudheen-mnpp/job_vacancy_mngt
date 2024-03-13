@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NotificationMail;
+use App\Models\User;
 use App\Models\Vacancy;
 use App\Services\JobVacancyService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class JobVacancyController extends Controller
@@ -41,16 +44,11 @@ class JobVacancyController extends Controller
             'vacancy_id' => 'nullable|exists:vacancies,id',
         ]);
     
-
-        DB::beginTransaction();
         try {
-            $vacancy = $this->jobVacancyService->addEditJobVacancy($request);
+            return $this->jobVacancyService->addEditJobVacancy($request);
         } catch (\Exception $e) {
-            DB::rollBack();
             return apiResponse(10,$e->getMessage());
         }
-        DB::commit();
-        return apiResponse($vacancy['errorCode'],$vacancy['errorMessage']);
         
 
         
@@ -65,5 +63,4 @@ class JobVacancyController extends Controller
             return apiResponse(10,$e->getMessage());
         }        
     }
-
 }

@@ -22,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('get-users',[MasterDataController::class,'getAllActiveUsers']);
 Route::get('get-jobs',[MasterDataController::class,'getAllActiveJobs']);
+
 Route::post('job-vacancy/list',[JobVacancyController::class,'list']);
-Route::post('job/store',[JobVacancyController::class,'store']);
-Route::delete('job/delete/{id}',[JobVacancyController::class,'destroy']);
+Route::post('job-vacancy/store',[JobVacancyController::class,'store']);
+Route::delete('job-vacancy/delete/{id}',[JobVacancyController::class,'destroy']);
+Route::get('job-vacancy/notification/{id}',[JobVacancyController::class,'sendJobNotification']);

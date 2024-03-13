@@ -239,7 +239,7 @@
                 addEditSubmitForm: function() {
 
                     app.submit_button_flag = true;
-                    url = "api/job/store";
+                    url = "api/job-vacancy/store";
 
                     axios.post(url, {
                         "start_date": this.start_date,
@@ -324,7 +324,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // If confirmed, send delete request
-                            let url = "api/job/delete/"+vacancyId;
+                            let url = "api/job-vacancy/delete/"+vacancyId;
                             axios.delete(url).then(function(response) {
                                 // Handle success response
                                 Swal.fire(
