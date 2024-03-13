@@ -5,7 +5,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h2>List of Jobs</h2>
+                    <h2>Job Vacancies</h2>
                     <div class="col-md-12 text-right"> <!-- Adjust the column size as needed -->
                         <button class="btn btn-primary" v-on:click="popupModal(0)">Add New Job</button>
                     </div>
@@ -31,7 +31,6 @@
                                         <span v-else class="text-danger">@{{ vacancy.status }}</span>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary mr-2">Send Notification</button>
                                         <button class="btn btn-success mr-2" v-on:click="popupModal(vacancy)">Edit</button>
                                         <button class="btn btn-danger"
                                             v-on:click="deleteVacancy(vacancy.id)">Delete</button>
